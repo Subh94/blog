@@ -51,6 +51,7 @@ Getting help for express
 
 Now let's cook some app with express, we are using ejs temple engine for this tutorial you can use some other one also like pug. 
 
+~~~
 	$ express --view=ejs myapp
 		create : myapp
 		create : myapp/package.json
@@ -69,6 +70,8 @@ Now let's cook some app with express, we are using ejs temple engine for this tu
 		create : myapp/views/error.ejs
 		create : myapp/bin
 		create : myapp/bin/www
+
+~~~
 
 Now we will look what dependencies we have in package.json and install them:
 	
