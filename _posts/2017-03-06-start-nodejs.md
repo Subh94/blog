@@ -213,5 +213,5 @@ Now point your browser to localhost:3000 or 127.0.0.1:3000 and you will see page
 
 
 
-##  Referances  
+##  References  
 **1.** [https://expressjs.com/en/starter/generator.html](https://expressjs.com/en/starter/generator.html)
