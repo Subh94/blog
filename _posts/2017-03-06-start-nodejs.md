@@ -16,10 +16,12 @@ This tutorial assume that you are running Ubuntu 16.04 and have ''sudo'' access 
 
 For Installing Distro stable version
 
-	$ sudo apt-get update
-	$ sudo apt-get install nodejs 
-	#For npm installation 
-	$ sudo apt-get install npm
+```
+$ sudo apt-get update
+$ sudo apt-get install nodejs 
+#For npm installation 
+$ sudo apt-get install npm
+```
 
 This is sufficient for working on node.js and enough for now, if you want to try latest or unstable version then follow this link [Node js instalation by package manager](https://nodejs.org/en/download/package-manager/)
 
@@ -51,7 +53,7 @@ Getting help for express
 
 Now let's cook some app with express, we are using ejs temple engine for this tutorial you can use some other one also like pug. 
 
-~~~
+
 	$ express --view=ejs myapp
 		create : myapp
 		create : myapp/package.json
@@ -71,28 +73,28 @@ Now let's cook some app with express, we are using ejs temple engine for this tu
 		create : myapp/bin
 		create : myapp/bin/www
 
-~~~
+
 
 Now we will look what dependencies we have in package.json and install them:
 	
 
-		{
-		"name": "myapp",
-		"version": "0.0.0",
-		"private": true,
-		"scripts": {
-			"start": "node ./bin/www"
-			},
-			"dependencies": {
-    		"body-parser": "~1.15.2",
-    		"cookie-parser": "~1.4.3",
-    		"debug": "~2.2.0",
-    		"ejs": "~2.5.2",
-    		"express": "~4.14.0",
-    		"morgan": "~1.7.0",
-    		"serve-favicon": "~2.3.0"
-    		}
+	{
+	"name": "myapp",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"start": "node ./bin/www"
+		},
+		"dependencies": {
+    	"body-parser": "~1.15.2",
+    	"cookie-parser": "~1.4.3",
+    	"debug": "~2.2.0",
+    	"ejs": "~2.5.2",
+    	"express": "~4.14.0",
+    	"morgan": "~1.7.0",
+    	"serve-favicon": "~2.3.0"
     	}
+    }
 
 
 Now Install them using:
@@ -139,39 +141,77 @@ Before understanding route file and content lets look how to add them in our app
 
 Let's look for this code in app.js reside inq project root folder:
 
-	var index = require('./routes/index');
-	var users = require('./routes/users');
-
-	app.use('/', index);
-	app.use('/users', users);
+	1 | var index = require('./routes/index');
+	2 | var users = require('./routes/users');
+	3 |
+	3 | app.use('/', index);
+	4 | app.use('/users', users);
 
 if you look closely then in first two line we have made a variable from __"./routes/index"__ and __"./routes/users"__ module and then we are using later with respective router in this __"app.use('/', index)"__  and __"app.use('/users', users)"__ line.
 
 Let's look some code in routes/index.js
 
-	1 var express = require('express');
-	2 var router = express.Router();
-	3 
-	4 /* GET home page. */
-	5 router.get('/', function(req, res, next) {
-	6   res.render('index', { title: 'Express' });
-	7 });
-	8 
-	9 module.exports = router;
+	1 | var express = require('express');
+	2 | var router = express.Router();
+	3 | 
+	4 | /* GET home page. */
+	5 | router.get('/', function(req, res, next) {
+	6 |   res.render('index', { title: 'Express' });
+	7 | });
+	8 | 
+	9 | module.exports = router;
 
+Let's  consider this example, we  have used get method for root page or router and rendoring  a  template file with provided data in json format. We will check how to use this data into template file in view part. 
 
 
 ## Getting View part 
 
+In above routing section, we checked how to write GET, POST, PUT method for routing and rendoring html file with some data,  now we will check here how to use this data in templates file to generate html file dynamically. 
+
+Note: This method depends on choice of view engine for node, and may defer from your choice but concept will nearly same. Here we are using ejs templates engine, which is based on javascript syntax with html. syntax for your choice can be found on your view engine home page. 
+
+First we will see how to include view engine in your main app.js located on root directory of your project. 
+
+```
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+```
+here you can see, that how we have included view engine in app.js. You don't have to setup this, if you have used given method to generate skelton code. 
+
+Now we will check index.ejs located in views folder
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+  </body>
+</html>
+```
+
+Here you can spot <%= title %> in this code, this is variable title we have passed from get method as name title. in ejs you can specify variable using this <%= your variable name %>. 
 
 
-So as a Example we will develop a demo site to find book in liabrary database and book it for reading purpose. so we will start with siimple database in MySql databse that will store list of book, list of user and and a  assigned relationship.
+## Finally 
+
+now we will check how to run our site locally and how to access in web browser and in next part we will discuss more about writing routing using GET, POST and other method. 
+
+Now got to root folder of project and type
+```
+npm start 
+```
+
+Now point your browser to localhost:3000 or 127.0.0.1:3000 and you will see page like this. 
+
+![Alt](/blog/images/post/express-start.png)
 
 
-## Step - 1 Develop Database Model
 
 
-## Step - 2 Write get and  Post method fro fetching Database
-
-
-## Step - 3 Developing frontend with Bootstrap and Pug template Engine
+##  Referances  
+**1.** [https://expressjs.com/en/starter/generator.html](https://expressjs.com/en/starter/generator.html)
