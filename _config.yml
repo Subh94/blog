@@ -1,5 +1,6 @@
 permalink: /:categories/:title.html
 url: "https://Subh94.github.io/blog/"
+baseurl: "/blog"
 full_name: "Subhash Kumar Agarwal"
 first_name: "Subhash"
 last_name: "Agarwal"
