@@ -9,7 +9,8 @@ image: /images/blog/nodejs_logo_green.jpg
 
 ## Introduction
 
-There are tons of tutorial on web to write "Hello World!" program in node.js, but here we will discuss a how to write a complete simple app from scratch. We will also discuss aboute writing routing, playing with get, post, query, parameter and all. We will talk a little about installing node.js, express and other dependancy first, then we will move to writing app part. 
+In this first post about Node Js we will talk about how to start with Node using express module, which provide a easy way to start MVC based web application in minutes. 
+
 
 ## Installation
 This tutorial assume that you are running Ubuntu 16.04 and have ''sudo'' access on your system. 
