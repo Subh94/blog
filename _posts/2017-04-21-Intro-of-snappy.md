@@ -14,12 +14,7 @@ Ubuntu Snappy Core is new mechanism  for managing the system and app, that are m
 
 Now let's check this video to know all about snappy and snapcraft.  
 
-<html>
- <body>
-  <iframe src="http://www.youtube.com/embed/DLxqdf89hRo"
-   width="560" height="315" frameborder="0" allowfullscreen></iframe>
- </body>
-</html>
+<p><span class="embed-youtube" style="text-align:center; display: block;"><iframe class='youtube-player' type='text/html' width='750' height='452' src='http://www.youtube.com/embed/DLxqdf89hRo?version=3&#038;rel=1&#038;fs=1&#038;autohide=2&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' allowfullscreen='true' style='border:0;'></iframe></span></p>
 
 
 Do let me know what do you think about Snappy and snapcraft in comment section below. 
