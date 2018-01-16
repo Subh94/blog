@@ -1,0 +1,18 @@
+---
+layout: blog
+title: Introduction to memory management in Python
+category: blog
+tags: [Python, Memory Management, Memory Leak] 
+summary: How Python Manage memory, What is memory leak and how to debug that.
+image: /images/blog/python.png
+---
+## Google Slide
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ9ZIO16A-TOOwZiHRyGqaXK_VyPC8Fm68PB5Cq-Oyhgwkn4XoC_BT4FR5SlIn1Y7fLSn85Zvh6COje/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+## Referances
+**1.** [https://pypi.python.org/pypi/memory_profiler](https://pypi.python.org/pypi/memory_profiler)
+
+**2.** [https://pythonhosted.org/Pympler/muppy.html](https://pythonhosted.org/Pympler/muppy.html)
+
+**3.** [https://markhaa.se/debugging-python-memory-leaks.html](https://markhaa.se/debugging-python-memory-leaks.html)
